@@ -70,12 +70,16 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-
+This table shows that 64 percent of deaths were males and 46 percent were females. This means that makes are almost twice as likely to die from covid than females are.  
 
 ## Inferential results 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
-
-
+This data shows that males are 2.3 times more likely to die from covid than females  are. Our p value is a very small number, so we will reject the null hypothesis that states that covid deaths are independent of sex.  
 
 ## Conclusions
 
