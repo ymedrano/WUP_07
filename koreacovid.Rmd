@@ -82,4 +82,4 @@ fisher.test(table1)
 This data shows that males are 2.3 times more likely to die from covid than females  are. Our p value is a very small number, so we will reject the null hypothesis that states that covid deaths are independent of sex.  
 
 ## Conclusions
-
+The bar chart showed that 60 percent of covid related deaths were male and 40 percent were female. Then, the numerical results showed more accurate data. It showed that 64 percent of covid related deaths were male and 36 percent were female. We concluded that males are about two times more likley to die from covid than females are. As a result, we rejected the null hypothesis that covid deaths are independent of sex.  
