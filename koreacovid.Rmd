@@ -39,24 +39,37 @@ with(kRdata, table(Sex, result))
 ## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
 
 ````{r}
-dd2 <- kRdata %>% group_by(sex,result) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+dd2 <- kRdata %>% group_by(result,sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
 # the group_by followed by summarize(count=n())
 
-basicC <- ggplot(dd2,aes(x=sex,y=count,fill=result))
+basicC <- ggplot(dd2,aes(x=result,y=count,fill=sex))
 basicC + geom_bar(stat="identity",position="dodge")
 
 #Now for percentage plot
 
-basicCC <- ggplot(dd2,aes(x=sex,y=prcnt*100,fill=result)) 
+basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=sex)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
+
+```
+
+This boxplot shows that out pf all the deaths, 60 percent of them are male and 40 percent are female.  
 
   
 ## Numerical results
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+
 
 
 ## Inferential results 
